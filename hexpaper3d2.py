@@ -179,7 +179,11 @@ class Paper:
         bg.postscript(file="output.ps", colormode='color')
         
 
-        
-top = Tk()
-paper = Paper(top, filename="")
-top.mainloop()
+if __name__ == '__main__':        
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        filename = ""
+    top = Tk()
+    paper = Paper(top, filename)
+    top.mainloop()
